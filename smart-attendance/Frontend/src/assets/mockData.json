@@ -1,0 +1,39 @@
+[
+{
+    "id": 1,
+    "email": "tumiso@gmail.com",
+    "name": "tumi",
+    "timein": "07:00",
+    "timeout": "16:30",
+    "status": "present",
+    "department": "fullstack",
+    "date": "9-November-2022",
+    "admin_id": 1,
+    "user_id": 1
+  },
+  {
+    "id": 2,
+    "email": "tumiso@gmail.com",
+    "name": "tumi",
+    "timein": "07:00",
+    "timeout": "16:30",
+    "status": "present",
+    "department": "fullstack",
+    "date": "9-November-2022",
+    "admin_id": 1,
+    "user_id": 6
+  },
+  {
+    "id": 3,
+    "email": "tumiso@gmail.com",
+    "name": "tumi",
+    "timein": "07:00",
+    "timeout": "16:30",
+    "status": "present",
+    "department": "fullstack",
+    "date": "9-November-2022",
+    "admin_id": 1,
+    "user_id": 4
+  }
+
+]

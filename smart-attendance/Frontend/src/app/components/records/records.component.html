@@ -1,0 +1,43 @@
+
+<app-navbar></app-navbar>
+<div class="container">
+    <div class="overflow-x-auto">
+        <table class="table w-full">
+          <!-- head -->
+          <thead>
+            <tr>
+              <th>#</th>
+              
+              <!-- <th>Name</th> -->
+              <th>Date</th>
+              <th>TimeIn</th>
+              <th>Status</th>
+              <th>Department</th>
+              <!-- <th>Reason</th> -->
+              
+          
+            </tr>
+          </thead>
+          <tbody>
+           
+            <!-- row 1 -->
+            <tr *ngFor="let record of data; let x = index">
+              <td>{{x+1}}</td>
+              <!-- <td>{{record.name}}</td> -->
+              <td>{{record.date | date:'mediumDate'}}</td>
+              <td>{{record.date | date:'shortTime' }}</td>
+              <td>{{record.status}}</td>
+             
+              <td>{{record.department}}</td>
+              <!-- <td>{{record.reason}}</td> -->
+              
+              
+              
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+</div>
+

@@ -1,0 +1,346 @@
+<app-nav></app-nav>
+
+<div style="width:100vw; height:100vh;background-color: aqua;" >
+<div class="container-fluid text-center admin" style="width:100vw; height:100vh" >
+  
+    <section >
+
+
+
+
+
+
+    <div class="row ">
+
+      <div class="col col-md-3" >
+        <app-sidebar></app-sidebar>
+        </div>
+      <div class="col container">
+        <div class="container">
+          <div class="row">
+              <div class="col-sm-2" style="padding-top: 3rem;">
+                  <img style="border-radius: 50%;" src="../../../assets/images/profile.jpeg" alt="">
+                  
+              </div>
+              <div class="col-sm-6" style="padding-top: 3rem;">
+                  <h1 class="title" style="font-size: 1rem;font-weight: 1000; font: bold; "> Name and surname</h1>
+                  <div class="row" style="padding-top: 1rem;">
+                      <div class="col-sm-6">
+                          
+                          <a><i class="bi bi-pen" style="background-color: var(--mauve);"></i>Edit user</a>
+                      </div>
+                      <div class="col-sm-6">
+                          <a><i class="bi bi-trash" style="background-color: var(--mauve);"></i>delete user</a>
+                      
+                      </div>
+                      
+                  </div>
+                  
+      
+      <div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+          <!--carrd-->
+          <div class="card bg-base-100 shadow-xl image-full">
+      
+            
+      
+      
+      
+              <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+              <div class="card-body">
+      
+      
+          <div class="space-y-8">
+            <form class="mt-8 space-y-6" [formGroup]="registerForm">
+              <div class="row">
+                  <div class="col-sm-6" >
+                      <div class="rounded-md shadow-sm -space-y-px">
+                          <div>
+                            <!-- <label for="email-address" class="sr-only">Email address</label> -->
+                            <input  formControlName="name" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Emplyoyee Name">
+                          </div>
+                          
+                          <div>
+                              <br>
+                            <!-- <label for="password" class="sr-only">Password</label> -->
+                            <input  formControlName="surname" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Employee Surname">
+                          </div>
+                          <div>
+                              <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                              <br>
+                              <input  formControlName="contacts" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter employee contatcs">
+                          </div>
+                          <div>
+                              <br>
+                          <div class="form-control w-full max-w-xs">
+                         
+                              
+                              <select class="select select-bordered">
+                                <option disabled selected>Choose department</option>
+                                <option>Full stack</option>
+                                <option>Sales force</option>
+                                <option>Pwd</option>
+                  
+                              </select>
+                  
+                            </div>
+                          </div>
+      
+                        </div>
+                  
+                  </div>
+                  <div class="col-sm-6">
+                      <div>
+                          <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                          
+                          <input  formControlName="employeeId" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Id employee">
+                      </div>
+                      <div>
+                          <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                          <br>
+                          <input  formControlName="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="employee email">
+                      </div>
+              
+                      <div>
+                        <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                        <br>
+                        <input  formControlName="password" type="password"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+                      </div>
+                      <div>
+                          <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                          <br>
+                          <input  formControlName="confirm password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
+                      </div>
+                  
+                  </div>
+              </div>
+            
+      
+              <input type="hidden" name="remember" value="true">
+            
+             
+            
+             
+            
+        
+            
+        
+              <div>
+                <button (click)="set_registerForm()" class="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white hover:--mauve focus:outline-none focus:ring-2 focus:ring-offset-2 focus:--mauve">
+                  <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+                  
+                    <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                      <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                    </svg>
+                  </span>
+                 edit
+                </button>
+              </div>
+            </form>
+          </div>
+      
+          <div class="card-actions justify-end">
+          </div>
+      </div>
+      </div> 
+        </div>
+      
+      
+              </div>
+              <div class="col-sm-4" style="padding-top: 1.5rem;">
+                 
+        
+                      <div class="stat">
+                        <div class="stat-title">Monthly attendance</div>
+                        <div class="stat-value">%89</div>
+                        <div class="stat-actions">
+                          <button class="btn btn-sm">View attendance</button>
+                        </div>
+                      </div>
+                      
+                      <div class="stat">
+                        <div class="stat-title">Current leave days</div>
+                        <div class="stat-value">4</div>
+                        <!-- <div class="stat-actions">
+                          <button class="btn btn-sm">Withdrawal</button> 
+                          <button class="btn btn-sm">deposit</button>
+                        </div> -->
+                      </div>
+                      
+                  
+              </div>
+          </div>
+      
+      
+      
+      
+      </div>
+      
+        
+  
+      </div>
+
+
+    </div>
+</section>
+  </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-2" style="padding-top: 3rem;">
+            <img src="../../../assets/images/profile.jpeg" alt="">
+            
+        </div>
+        <div class="col-sm-6" style="padding-top: 3rem;">
+            <h1 class="title" style="font-size: 1rem;font-weight: 1000; font: bold; "> Name and surname</h1>
+            <div class="row" style="padding-top: 1rem;">
+                <div class="col-sm-6">
+                    
+                    <a><i class="bi bi-pen" style="background-color: var(--mauve);"></i>Edit user</a>
+                </div>
+                <div class="col-sm-6">
+                    <a><i class="bi bi-trash" style="background-color: var(--mauve);"></i>delete user</a>
+                
+                </div>
+                
+            </div>
+            
+
+<div class="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <!--carrd-->
+    <div class="card bg-base-100 shadow-xl image-full">
+
+      
+
+
+
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+
+
+    <div class="space-y-8">
+      <form class="mt-8 space-y-6" [formGroup]="registerForm">
+        <div class="row">
+            <div class="col-sm-6" >
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                      <!-- <label for="email-address" class="sr-only">Email address</label> -->
+                      <input  formControlName="name" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Emplyoyee Name">
+                    </div>
+                    
+                    <div>
+                        <br>
+                      <!-- <label for="password" class="sr-only">Password</label> -->
+                      <input  formControlName="surname" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Employee Surname">
+                    </div>
+                    <div>
+                        <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                        <br>
+                        <input  formControlName="contacts" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter employee contatcs">
+                    </div>
+                    <div>
+                        <br>
+                    <div class="form-control w-full max-w-xs">
+                   
+                        
+                        <select class="select select-bordered">
+                          <option disabled selected>Choose department</option>
+                          <option>Full stack</option>
+                          <option>Sales force</option>
+                          <option>Pwd</option>
+            
+                        </select>
+            
+                      </div>
+                    </div>
+
+                  </div>
+            
+            </div>
+            <div class="col-sm-6">
+                <div>
+                    <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                    
+                    <input  formControlName="employeeId" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Id employee">
+                </div>
+                <div>
+                    <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                    <br>
+                    <input  formControlName="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="employee email">
+                </div>
+        
+                <div>
+                  <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                  <br>
+                  <input  formControlName="password" type="password"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+                </div>
+                <div>
+                    <!-- <label for="ConfirmPassword" class="sr-only">ConfirmPassword</label> -->
+                    <br>
+                    <input  formControlName="confirm password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
+                </div>
+            
+            </div>
+        </div>
+      
+
+        <input type="hidden" name="remember" value="true">
+      
+       
+      
+       
+      
+  
+      
+  
+        <div>
+          <button (click)="set_registerForm()" class="group relative flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white hover:--mauve focus:outline-none focus:ring-2 focus:ring-offset-2 focus:--mauve">
+            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            
+              <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
+           edit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="card-actions justify-end">
+    </div>
+</div>
+</div> 
+  </div>
+
+
+        </div>
+        <div class="col-sm-4" style="padding-top: 1.5rem;">
+           
+  
+                <div class="stat">
+                  <div class="stat-title">Monthly attendance</div>
+                  <div class="stat-value">%89</div>
+                  <div class="stat-actions">
+                    <button class="btn btn-sm">View attendance</button>
+                  </div>
+                </div>
+                
+                <div class="stat">
+                  <div class="stat-title">Current leave days</div>
+                  <div class="stat-value">4</div>
+                  <!-- <div class="stat-actions">
+                    <button class="btn btn-sm">Withdrawal</button> 
+                    <button class="btn btn-sm">deposit</button>
+                  </div> -->
+                </div>
+                
+            
+        </div>
+    </div>
+
+
+
+
+</div>

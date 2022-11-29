@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+/* CSS HEX */
+:root{
+
+
+--main: #FFE8D6;
+--backgr: #DDBEA9;
+--btn-col: #CB997E;
+--space-cadet: #2c2a4aff;
+--input-col:#B7B7A4;
+--light-gr:#A5A58D;
+--dark-gr:#6B705C;
+
+
+
+}
