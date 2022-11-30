@@ -12,6 +12,7 @@ import { RecordsComponent } from './components/records/records.component';
 import { ViewAttendanceComponent } from './components/view-attendance/view-attendance.component';
 import { AdminComponent } from './components/admin/admin.component';
 
+
 const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"",component:RegisterComponent},
@@ -22,6 +23,7 @@ const routes: Routes = [
   {path:"Profile",component:UserProfileComponent},
   {path:"client",component:ClientComponent},
   {path:"records",component:RecordsComponent},
+ 
   //{path:"admin",component:ViewAttendanceComponent},
   {path:"admin",component:AdminComponent}
   
