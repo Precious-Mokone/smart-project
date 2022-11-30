@@ -10,7 +10,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ViewUsersComponent implements OnInit {
 
-
+  items = [];
+  pageOfItems!: Array<any>;
 
  
   //======================properties=======================
