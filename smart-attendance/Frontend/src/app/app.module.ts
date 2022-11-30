@@ -2,6 +2,7 @@
 //============================modules================================
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {DataTablesModule} from 'angular-datatables';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +31,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
 import { IndicatorsComponent } from './components/admin/indicators/indicators.component';
 import { ListComponent } from './components/admin/list/list.component';
+import { TestComponent } from './components/test/test.component';
 
 
 
@@ -54,12 +56,14 @@ import { ListComponent } from './components/admin/list/list.component';
     AdminComponent,
     SidebarComponent,
     IndicatorsComponent,
-    ListComponent
+    ListComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    DataTablesModule,
     HttpClientModule,
    
   ],

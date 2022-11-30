@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-list',
@@ -35,6 +37,9 @@ export class ListComponent implements OnInit {
   user_data:any
 
   usersList:any
+
+  dtOptions: DataTables.Settings = {};
+  dtTrigger: Subject<any> = new Subject<any>();
 
   //======================methods==========================
 
@@ -72,13 +77,53 @@ export class ListComponent implements OnInit {
 
 
 
+    // this.auth.get_All_Users().subscribe((messages) => {
+    //   this.usersList = messages
+    //   console.log('from database services',messages)
+    //   this.dtTrigger.next(this.usersList)
+    // });
     this.auth.get_All_Users().subscribe((messages) => {
       this.usersList = messages
       console.log('from database services',messages)
+      this.dtTrigger.next(this.usersList)
     })
 
+    this.dtOptions = {
+      pagingType: 'full_numbers',
+      pageLength: 5,
+      lengthMenu : [5, 10, 15],
+      processing: true
+     };
     
   }
+
+  // ngOnInit(): void {
+
+  //   this.bookingService.GetList().subscribe((res:any) => {
+  //     this.bookings = res;
+
+  //     this.dtTrigger.next(this.bookings);
+  //     // let result = res;
+  //     // this.bookings = result.filter(ress => ress.id === 3)
+
+  //   });
+
+  //   this.dtOptions = {
+  //     pagingType: 'full_numbers',
+  //     pageLength: 5,
+  //     lengthMenu : [5, 10, 25],
+  //     processing: true
+  //    };
+
+  // }
+
+  ngOnDestroy(): void {
+    this.dtTrigger.unsubscribe();
+  }
+
+
+
+  
 
   onChangePage(pageOfItems: Array<any>) {
     // update current page of items
