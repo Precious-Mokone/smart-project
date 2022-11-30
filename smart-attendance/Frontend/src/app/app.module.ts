@@ -30,6 +30,9 @@ import { AdminComponent } from './components/admin/admin.component';
 import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
 import { IndicatorsComponent } from './components/admin/indicators/indicators.component';
 import { ListComponent } from './components/admin/list/list.component';
+import { AdminviewComponent } from './components/adminview/adminview.component';
+
+
 
 
 
@@ -54,7 +57,9 @@ import { ListComponent } from './components/admin/list/list.component';
     AdminComponent,
     SidebarComponent,
     IndicatorsComponent,
-    ListComponent
+    ListComponent,
+    AdminviewComponent,
+  
   ],
   imports: [
     BrowserModule,

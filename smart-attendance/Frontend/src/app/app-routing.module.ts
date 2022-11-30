@@ -9,8 +9,9 @@ import { ViewUsersComponent } from './components/view-users/view-users.component
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { ClientComponent } from './components/client/client.component';
 import { RecordsComponent } from './components/records/records.component';
-import { ViewAttendanceComponent } from './components/view-attendance/view-attendance.component';
+//import { ViewAttendanceComponent } from './components/view-attendance/view-attendance.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminviewComponent } from './components/adminview/adminview.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -23,7 +24,9 @@ const routes: Routes = [
   {path:"client",component:ClientComponent},
   {path:"records",component:RecordsComponent},
   //{path:"admin",component:ViewAttendanceComponent},
-  {path:"admin",component:AdminComponent}
+  {path:"admin",component:AdminComponent},
+  {path:"adminview",component:AdminviewComponent}
+ 
   
 
 
