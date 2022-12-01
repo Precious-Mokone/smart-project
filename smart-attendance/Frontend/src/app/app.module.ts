@@ -35,6 +35,8 @@ import { ListComponent } from './components/admin/list/list.component';
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,13 +56,16 @@ import { ListComponent } from './components/admin/list/list.component';
     AdminComponent,
     SidebarComponent,
     IndicatorsComponent,
-    ListComponent
+    ListComponent,
+   
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    //ChartsModule
    
   ],
   providers: [],
