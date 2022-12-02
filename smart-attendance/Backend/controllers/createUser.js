@@ -6,8 +6,19 @@ const jwt = require("jsonwebtoken");
 
 //Register Function
 
+// {
+//   "contacts": "0989878909",
+//   "department": "Full stack"
+//   "email":"samson@gmail.com"
+//   "name": "Samson"
+//   "password": "12345"
+//   "surname": "Samuels"
+//   "usertype": "client"
+//   }
+    
+
 exports.createUser = async (req, res) => {
-  const {name,surname,contacts, email, password,deparrtment , usertype} = req.body;
+  const {name,surname,contacts, email, password,department , usertype} = req.body;
 
   try {
     const data = await pool.query(`SELECT * FROM users WHERE email= $1;`, [
@@ -39,7 +50,7 @@ exports.createUser = async (req, res) => {
         //Inserting data into the database
         pool.query(
           `INSERT INTO users (name,surname,contacts, email, password ,department, usertype) VALUES ($1,$2,$3,$4,$5,$6,$7);`,
-          [user.name, user.surname,user.contacts, user.email,user.password, user.usertype],
+          [user.name, user.surname,user.contacts, user.email,user.password, user.password,user.usertype],
           (err) => {
             if (err) {
               flag = 0; //If user is not inserted is not inserted to database assigning flag as 0/false.
