@@ -1,0 +1,104 @@
+
+<!-- <div class="flex items-center justify-center">
+  
+    <div class="card bg-base-100 shadow-xl image-full">
+        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
+        <div class="card-body">
+    <div class="space-y-8">-->
+      <div>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-white-900">Add new employee account</h2>
+        <p class="mt-2 text-center text-sm text-gray-600">
+        </p>
+      </div> 
+      <form class="mt-8 space-y-6" [formGroup]="registerForm">
+        <div class="row">
+            <div class="col-sm-6" >
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                    
+                      <input  formControlName="name2" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Emplyoyee Name">
+                      <div *ngIf="validate['name'].touched && validate['name'].invalid" class="alert alert-danger validation">
+                        <div *ngIf="validate['name'].errors && validate['name'].errors['required']">name is required.</div>
+                        <div *ngIf="validate['name'].errors && validate['name'].errors['minlength']">Name must be at least 3 characters.</div>
+                        <div *ngIf="validate['name'].errors && validate['name'].errors['maxlength']">Name must be at least 30 characters.</div>
+                      </div>
+                    </div>
+                    
+                    <div>
+                        <br>
+                  
+                      <input  formControlName="surname" type="text" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Employee Surname">
+                    </div>
+                    <div>
+                       
+                        <br>
+                        <input  formControlName="contacts" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Enter employee contatcs">
+                    </div>
+                    <div>
+                   
+                      <br>
+                      <input  formControlName="department" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Department">
+                  </div>
+                 
+
+                  </div>
+            
+            </div>
+            <div class="col-sm-6">
+                <div>
+                  
+                    
+                    <input  formControlName="employeeId" type="text"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Id employee">
+                </div>
+                <div>
+       
+                    <br>
+                    <input  formControlName="email" type="email" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="employee email">
+                    <div *ngIf="validate['email'].touched && validate['email'].invalid" class="alert alert-danger validation" > 
+                      <div *ngIf="validate['email'].errors && validate['email'].errors['required']">Email is required.</div>
+                      <div *ngIf="validate['email'].errors && validate['email'].errors['email']">Please, enter valid email address.</div> 
+                    </div>
+                </div>
+        
+                <div>
+                
+                  <br>
+                  <input  formControlName="password" type="password"  required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+                  <div *ngIf="validate['password'].touched && validate['password'].invalid" class="alert alert-danger validation">
+                    <div *ngIf="validate['password'].errors && validate['password'].errors['required']">password is required.</div>
+                    <div *ngIf="validate['password'].errors && validate['password'].errors['password']">Please, enter valid password.</div>
+                  </div>
+                </div>
+                <div>
+                  
+                    <br>
+                    <input  formControlName="confirm password" type="password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Confirm Password">
+                </div>
+            
+            </div>
+        </div>
+        <input type="hidden" name="remember" value="true">
+        <div>
+          <button (click)="set_registerForm()"  class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white  hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+            
+              <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+              </svg>
+            </span>
+           Add New User
+          </button>
+        </div>
+      </form>
+
+      <div class="alert1" [class.visible]="isVisible"> 
+        Incorrect credentials
+      </div>
+    <!-- </div>
+
+    <div class="card-actions justify-end">
+    </div>
+</div>
+</div> 
+  </div> -->
+

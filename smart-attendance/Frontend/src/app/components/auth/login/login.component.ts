@@ -10,6 +10,8 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
+  public isVisible: boolean = false;
+
   //=================================properties================================
   LoginForm!:UntypedFormGroup;
 
@@ -66,7 +68,14 @@ export class LoginComponent implements OnInit {
 
             },
              (err) => {
-               alert("User does not exist, Register First")
+
+              if (this.isVisible) { 
+                return;
+              } 
+              this.isVisible = true;
+              setTimeout(()=> this.isVisible = false,2500)
+
+
               return err.error.errorMessage;
             
             }

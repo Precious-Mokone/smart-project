@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import {DataTablesModule} from 'angular-datatables';
 import { AppRoutingModule } from './app-routing.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -32,6 +32,8 @@ import { SidebarComponent } from './components/admin/sidebar/sidebar.component';
 import { IndicatorsComponent } from './components/admin/indicators/indicators.component';
 import { ListComponent } from './components/admin/list/list.component';
 import { TestComponent } from './components/test/test.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { AddUsersComponent } from './components/admin/add-users/add-users.component';
 
 
 
@@ -57,7 +59,8 @@ import { TestComponent } from './components/test/test.component';
     SidebarComponent,
     IndicatorsComponent,
     ListComponent,
-    TestComponent
+    TestComponent,
+    AddUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,8 @@ import { TestComponent } from './components/test/test.component';
     ReactiveFormsModule,
     DataTablesModule,
     HttpClientModule,
+    NgxPaginationModule,
+  
    
   ],
   providers: [],

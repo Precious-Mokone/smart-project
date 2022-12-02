@@ -13,8 +13,8 @@ import { ViewAttendanceComponent } from './components/view-attendance/view-atten
 import { AdminComponent } from './components/admin/admin.component';
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
-  {path:"",component:RegisterComponent},
+  {path:"",component:LoginComponent},
+  {path:"register",component:RegisterComponent},
   {path:"dash",component:DashboardComponent},
   {path:"post",component:PostsComponent},
   {path:"adduser",component:AddUserComponent},

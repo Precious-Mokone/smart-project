@@ -1,19 +1,59 @@
-<body style="background-color: var(--mauve);"> 
+
+<body style="background-color: var(--backgr);"> 
 
 
-<!-- <div class="min-h-full flex items-center justify-center"> -->
-  
-    <!-- <div class="max-w-md w-full space-y-8"> -->
-      <!-- <div> -->
-        <!-- <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow"> -->
-        <!-- <h2 class="mt-6 text-center text-3xl font-extrabold">Log in</h2>
-        <p class="mt-2 text-center text-sm text-gray-600">
-         OR 
-        </p>
-        <p class="mt-2 text-center text-sm text-gray-600">
-          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> register account </a>
-        </p>
-      </div> -->
+
+  <div class="main"  style="background-color: var(--input-col);">
+    <input type="checkbox" id="chk" aria-hidden="true">
+      <div class="header">Maboneng Attendance System</div>
+    <div class="signup" >
+
+      
+  <form class="form" [formGroup]="LoginForm">
+    <label for="chk" aria-hidden="true">Login</label>
+    <input type="hidden" name="remember" value="true">
+   
+      
+      <div>
+    
+        <input id="email-address" formControlName="email" type="email" autocomplete="email" required class="form-control" placeholder="Email address">
+        
+        <div *ngIf="validate['email'].touched && validate['email'].invalid" class="alert alert-danger validation"> 
+          <div *ngIf="validate['email'].errors && validate['email'].errors['required']">Email is required.</div>
+          <div *ngIf="validate['email'].errors && validate['email'].errors['email']">Please, enter valid email address.</div> 
+        </div>
+      </div>
+      <br>
+      <div>
+        
+        <input id="password" formControlName="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
+           <div *ngIf="validate['password'].touched && validate['password'].invalid" class="alert alert-danger validation" >
+          <div *ngIf="validate['password'].errors && validate['password'].errors['required']">password is required.</div>
+          <div *ngIf="validate['password'].errors && validate['password'].errors['password']">Please, enter valid password.</div>
+      </div>
+      </div>
+      <br>
+    <br>
+      <button (click)="get_login()" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+        <span class="absolute left-0 inset-y-0 flex items-center pl-3">
+          <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+          </svg>
+        </span>
+        Login
+      </button>
+  </form>
+  </div>
+</div>
+<div class="alert1" [class.visible]="isVisible"> 
+  User does not exist
+</div>
+</body>
+
+<!-- <body style="background-color: var(--dark-gr);"> 
+
+
+
       <div class="main" >
         <input type="checkbox" id="chk" aria-hidden="true">
         <div class="header">Maboneng Attendance System</div>
@@ -21,74 +61,37 @@
       <form class="form" [formGroup]="LoginForm">
         <label for="chk" aria-hidden="true">Login</label>
         <input type="hidden" name="remember" value="true">
-        <!-- <div class="rounded-md shadow-sm -space-y-px"> -->
+       
           
           <div>
-            <!-- <label for="email-address" class="sr-only">Email address</label> -->
+        
             <input id="email-address" formControlName="email" type="email" autocomplete="email" required class="form-control" placeholder="Email address">
-
-            <!-- <i class="fa fa-envelope fa-lg" aria-hidden="true"></i> -->
-
             <div *ngIf="validate['email'].touched && validate['email'].invalid" class="alert alert-danger"> 
               <div *ngIf="validate['email'].errors && validate['email'].errors['required']">Email is required.</div>
               <div *ngIf="validate['email'].errors && validate['email'].errors['email']">Please, enter valid email address.</div> 
             </div>
           </div>
           <br>
-         
           <div>
-            <!-- <label for="password" class="sr-only">Password</label> -->
             <input id="password" formControlName="password" type="password" autocomplete="current-password" required class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" placeholder="Password">
-            
-            <!-- <i class="fa fa-lock fa-lg" aria-hidden="true"></i> -->
-
                <div *ngIf="validate['password'].touched && validate['password'].invalid" class="alert alert-danger">
               <div *ngIf="validate['password'].errors && validate['password'].errors['required']">password is required.</div>
               <div *ngIf="validate['password'].errors && validate['password'].errors['password']">Please, enter valid password.</div>
-      
           </div>
-  
           </div>
           <br>
-      
-    
-  
-        <!-- <div class="flex items-center justify-between"> -->
-          <!-- <div class="flex items-center"> -->
-         <!--  <input id="remember-me" name="remember-me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
-            <label for="remember-me" class="ml-2 block text-sm text-gray-900"> Remember me </label> -->
-          <!-- </div> -->
-          
-          <!-- <div class="text-sm">
-            <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500"> Forgot your password? </a>
-          </div> -->
-        <!-- </div> -->
         <br>
-        <!-- <div> -->
           <button (click)="get_login()" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
             <span class="absolute left-0 inset-y-0 flex items-center pl-3">
-             
               <svg class="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                 <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
               </svg>
             </span>
             Login
           </button>
-        <!-- </div> -->
-        <!-- </div> -->
       </form>
       </div>
-      <!-- <div class="login">
-				<form>
-					<label for="chk" aria-hidden="true">Client Login</label>
-					<input type="text" name="txt" placeholder="Employee Num" required="">
-					<input type="password" name="pswd" placeholder="Password" required="">
-					<button (click)="get_login()">Login</button>
-				</form>
-			</div> -->
-
     </div>
-  </body>
-    <!-- </div> -->
-  <!-- </div> -->
+  </body> -->
+
 

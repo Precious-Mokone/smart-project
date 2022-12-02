@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
+import { FormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Subject } from 'rxjs';
 
 @Component({
-  selector: 'app-list',
-  templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  selector: 'app-add-users',
+  templateUrl: './add-users.component.html',
+  styleUrls: ['./add-users.component.scss']
 })
-export class ListComponent implements OnInit {
+export class AddUsersComponent implements OnInit {
+
+  public isVisible: boolean = false;
 
   // items = [];
   pageOfItems:any= 3;
@@ -69,16 +71,23 @@ export class ListComponent implements OnInit {
     this.auth.set_employee(user).subscribe((my_data)=>{
       console.log("From the Service",my_data)
 
-      this.path.navigate(['/viewusers'])
-      alert(user.name + "was added")
+      this.path.navigate(['/admin'])
+      // alert(user.name + "was added")
+      if (this.isVisible) { 
+        return;
+      } 
+      this.isVisible = true;
+      setTimeout(()=> this.isVisible = false,2500)
 
     })
   }
 
-  
+  get validate() {
+    return this.registerForm.controls;
+  }
 
   //======================defaults=========================
-  constructor(private auth:AuthService,private path:Router) { }
+  constructor(private auth:AuthService,private path:Router,public fb:FormBuilder) { }
 
   ngOnInit(): void {
 
@@ -89,11 +98,11 @@ export class ListComponent implements OnInit {
     //   console.log('from database services',messages)
     //   this.dtTrigger.next(this.usersList)
     // });
-    this.auth.get_All_Users().subscribe((messages) => {
-      this.usersList = messages
-      console.log('from database services',messages)
-      this.dtTrigger.next(this.usersList)
-    })
+    // this.auth.get_All_Users().subscribe((messages) => {
+    //   this.usersList = messages
+    //   console.log('from database services',messages)
+    //   this.dtTrigger.next(this.usersList)
+    // })
 
     // this.dtOptions = {
     //   pagingType: 'full_numbers',
@@ -101,6 +110,19 @@ export class ListComponent implements OnInit {
     //   lengthMenu : [5, 10, 15],
     //   processing: true
     //  };
+    this.registerForm = this.fb.group({
+      name2: ['', [Validators.required,Validators.minLength(3)]],
+      surname: ['', [Validators.required,Validators.minLength(2)]],
+      contacts: ['', [Validators.required,Validators.minLength(10)]],
+      usertype: ['', [Validators.required,Validators.minLength(3)]],
+      email: ['', [Validators.required,Validators.email]],
+      password: ['', [Validators.required]],
+      department: ['', [Validators.required,Validators.minLength(3)]],
+      empId: ['', [Validators.required,Validators.minLength(3)]],
+    
+    });
+
+
     
   }
 
@@ -124,27 +146,27 @@ export class ListComponent implements OnInit {
 
   // }
 
-    onTableDataChange(event:any){
-    this.page = event;
-    this.usersList;
-  }
+  //   onTableDataChange(event:any){
+  //   this.page = event;
+  //   this.usersList;
+  // }
 
-  onTableSizeChange(event:any):void{
-    this.tableSize = event.target.value;
-    this.page= 1;
-    this.usersList;
-  }
+  // onTableSizeChange(event:any):void{
+  //   this.tableSize = event.target.value;
+  //   this.page= 1;
+  //   this.usersList;
+  // }
 
-  ngOnDestroy(): void {
-    this.dtTrigger.unsubscribe();
-  }
+  // ngOnDestroy(): void {
+  //   this.dtTrigger.unsubscribe();
+  // }
 
 
 
   
 
-  onChangePage(pageOfItems: Array<any>) {
-    // update current page of items
-    this.pageOfItems = pageOfItems;
-  }
+  // onChangePage(pageOfItems: Array<any>) {
+  //   // update current page of items
+  //   this.pageOfItems = pageOfItems;
+  // }
 }
